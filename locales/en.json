@@ -1,0 +1,79 @@
+{
+  "components": {
+    "langSwitcherComponent": {
+      "rus": "RU",
+      "eng": "EN"
+    },
+    "menuComponent": []
+  },
+  "pages": {},
+  "forms": {
+    "registration": {
+      "dividers": "Company data",
+      "fields": {
+        "firstName": {
+          "label": "Please, provide your first name",
+          "placeholder": "First name",
+          "rules": {
+            "required": "First name field is required"
+          }
+        },
+        "lastName": {
+          "label": "Please, provide your last name",
+          "placeholder": "Last name",
+          "rules": {
+            "required": "Last name field is required"
+          }
+        },
+        "surname": {
+          "label": "Please, provide your surname (if it exists)",
+          "placeholder": "Surname"
+        },
+        "company": {
+          "label": "Place your company name below",
+          "placeholder": "Company name",
+          "rules": {
+            "required": "Company name field is required"
+          }
+        },
+        "email": {
+          "label": "Place your e-mail address below",
+          "placeholder": "E-mail",
+          "rules": {
+            "required": "E-mail field is required",
+            "invalid": "E-mail should be a valid e-mail address"
+          }
+        },
+        "password": {
+          "label": "Place your password below",
+          "placeholder": "Password",
+          "rules": {
+            "required": "Password field is required",
+            "min": "Password should be at least ${min} chars long"
+          }
+        }
+      },
+      "submit": "Register"
+    },
+    "login": {
+      "fields": {
+        "email": {
+          "label": "Enter your e-mail",
+          "placeholder": "E-mail",
+          "rules": {
+            "required": "E-mail field is required",
+            "invalid": "E-mail should be a valid e-mail address"
+          }
+        },
+        "password": {
+          "label": "Enter your password",
+          "placeholder": "Password",
+          "rules": {
+            "required": "Password field is required"
+          }
+        }
+      },
+      "submit": "Login"
+    }
+  }
+}

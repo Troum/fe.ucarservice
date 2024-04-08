@@ -1,0 +1,10 @@
+:root {
+  --color-bg-light-1: rgb(255, 63, 0);
+  --color-bg-light-2: rgb(112, 27, 7);
+}
+
+@media (prefers-color-scheme: light) {
+  .gradient-background {
+    background: linear-gradient(-67deg, var(--color-bg-light-1), var(--color-bg-light-2));
+  }
+}

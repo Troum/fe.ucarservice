@@ -1,0 +1,79 @@
+{
+  "components": {
+    "langSwitcherComponent": {
+      "rus": "РУ",
+      "eng": "EN"
+    },
+    "menuComponent": []
+  },
+  "pages": {},
+  "forms": {
+    "registration": {
+      "divider": "Данные о компании",
+      "fields": {
+        "firstName": {
+          "label": "Напишите ваше имя",
+          "placeholder": "Имя",
+          "rules": {
+            "required": "Поле имя обязательно к заполнению"
+          }
+        },
+        "lastName": {
+          "label": "Напишите вашу фамилию",
+          "placeholder": "Фамилия",
+          "rules": {
+            "required": "Поле фамилии обязательно к заполнению"
+          }
+        },
+        "surname": {
+          "label": "Напишите ваше отчество (если оно есть)",
+          "placeholder": "Отчество"
+        },
+        "company": {
+          "label": "Напишите название вашей компании",
+          "placeholder": "Название компании",
+          "rules": {
+            "required": "Поле название обязательно к заполнению"
+          }
+        },
+        "email": {
+          "label": "Введите свой e-mail",
+          "placeholder": "E-mail",
+          "rules": {
+            "required": "Поле e-mail обязательно к заполнению",
+            "invalid": "Поле e-mail должно быть валидным e-mail адресом"
+          }
+        },
+        "password": {
+          "label": "Придумайте и введите пароль",
+          "placeholder": "Пароль",
+          "rules": {
+            "required": "Поле пароля обязательно к заполнению",
+            "min": "Пароль должен быть в длину минимум ${min} символов"
+          }
+        }
+      },
+      "submit": "Зарегистрироваться"
+    },
+    "login": {
+      "fields": {
+        "email": {
+          "label": "Введите e-mail",
+          "placeholder": "E-mail",
+          "rules": {
+            "required": "Поле e-mail обязательно к заполнению",
+            "invalid": "Поле e-mail должно быть валидным e-mail адресом"
+          }
+        },
+        "password": {
+          "label": "Введите пароль",
+          "placeholder": "Пароль",
+          "rules": {
+            "required": "Поле пароля обязательно к заполнению"
+          }
+        }
+      },
+      "submit": "Войти"
+    }
+  }
+}
