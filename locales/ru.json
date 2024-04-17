@@ -6,9 +6,13 @@
     },
     "menuComponent": []
   },
-  "pages": {},
+  "pages": {
+  },
   "forms": {
     "registration": {
+      "title": "Регистрация в Ucar",
+      "has_account": "Уже зарегистрированы?",
+      "has_account_link": "Войти",
       "divider": "Данные о компании",
       "fields": {
         "firstName": {
@@ -36,6 +40,19 @@
             "required": "Поле название обязательно к заполнению"
           }
         },
+        "agreement": {
+          "label": "Я согласен с тем, что описано в <a class=\"underline underline-offset-4\" href=\"/agreement\" target=\"_blank\">Пользовательском соглашении и сведениях о конфиденциальности</a>",
+          "rules": {
+            "required": "Согласие обязательно"
+          }
+        },
+        "subscription": {
+          "label": "Я согласен получать новости и обновления"
+        },
+        "ownership": {
+          "label": "Выберите форму собственности",
+          "placeholder": "Форма собственности"
+        },
         "email": {
           "label": "Введите свой e-mail",
           "placeholder": "E-mail",
@@ -56,6 +73,9 @@
       "submit": "Зарегистрироваться"
     },
     "login": {
+      "title": "Авторизация в Ucar",
+      "no_account": "Ещё нет аккаунта?",
+      "no_account_link": "Зарегистрироваться",
       "fields": {
         "email": {
           "label": "Введите e-mail",
@@ -73,7 +93,7 @@
           }
         }
       },
-      "submit": "Войти"
+      "submit": "Войти в систему"
     }
   }
 }

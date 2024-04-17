@@ -6,10 +6,14 @@
     },
     "menuComponent": []
   },
-  "pages": {},
+  "pages": {
+  },
   "forms": {
     "registration": {
-      "dividers": "Company data",
+      "title": "Sign Up for Ucar",
+      "has_account": "Already have the account?",
+      "has_account_link": "Sign in",
+      "divider": "Company data",
       "fields": {
         "firstName": {
           "label": "Please, provide your first name",
@@ -36,6 +40,19 @@
             "required": "Company name field is required"
           }
         },
+        "agreement": {
+          "label": "By checking this I agree with <a class=\"underline underline-offset-4\" href=\"/agreement\" target=\"_blank\">Privacy policy, terms and conditions</a>",
+          "rules": {
+            "required": "Agreement checkbox is required"
+          }
+        },
+        "subscription": {
+          "label": "By checking this I agree with to receive news and updates"
+        },
+        "ownership": {
+          "label": "Select your company ownership type",
+          "placeholder": "Ownership type"
+        },
         "email": {
           "label": "Place your e-mail address below",
           "placeholder": "E-mail",
@@ -53,9 +70,12 @@
           }
         }
       },
-      "submit": "Register"
+      "submit": "Proceed Sign Up"
     },
     "login": {
+      "title": "Sign In to Ucar",
+      "no_account": "Don't have an account?",
+      "no_account_link": "Sign up",
       "fields": {
         "email": {
           "label": "Enter your e-mail",

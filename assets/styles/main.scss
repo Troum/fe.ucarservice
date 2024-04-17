@@ -1,5 +1,16 @@
-@import "assets/styles/layouts/default/index";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
   font-family: Montserrat, sans-serif;
+}
+
+@layer components {
+  .lang-switcher-ru {
+    @apply bg-woodsmoke-900 hover:bg-woodsmoke-900 dark:bg-vermilion-200 text-vermilion-200 dark:text-woodsmoke-900
+  }
+  .lang-switcher-en {
+    @apply bg-woodsmoke-900 hover:bg-woodsmoke-900 dark:bg-vermilion-200 text-vermilion-200 dark:text-woodsmoke-900
+  }
 }

@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import type {NuxtPage} from "@nuxt/schema";
+
 export default defineNuxtConfig({
+    tailwindcss: undefined,
+    $development: undefined, $env: undefined, $meta: undefined, $production: undefined, $test: undefined,
     devtools: {enabled: true},
     ssr: false,
     app: {
@@ -17,6 +21,7 @@ export default defineNuxtConfig({
         '@nuxt/ui',
         '@nuxtjs/i18n',
         '@pinia/nuxt',
+        '@pinia-plugin-persistedstate/nuxt',
         '@nuxtjs/tailwindcss',
         '@nuxtjs/google-fonts'
     ],
@@ -25,11 +30,7 @@ export default defineNuxtConfig({
     ],
     runtimeConfig: {
         public: {
-            baseURL: process.env.NUXT_API_URL,
-            socketIoServerUrl: process.env.NUXT_SOCKET_IO_SERVER_URL,
-            socketIoServerUrl2: process.env.NUXT_SOCKET_IO_SERVER_URL_2,
-            underMaintenance: process.env.NUXT_UNDER_MAINTENANCE,
-            doNotOpenMatch: process.env.NUXT_DO_NOT_OPEN_MATCH,
+            baseURL: process.env.NUXT_API_URL
         }
     },
     i18n: {
@@ -38,6 +39,26 @@ export default defineNuxtConfig({
     googleFonts: {
         families: {
             Montserrat: [400,500,600,700,800,900]
+        }
+    },
+    // @ts-ignore
+    piniaPersistedstate: {
+        storage: 'localStorage'
+    },
+    hooks: {
+        'pages:extend' (pages) {
+            function setMiddleware (pages: NuxtPage[]) {
+                for (const page of pages) {
+                    if (page.name?.includes('cabinet')) {
+                        page.meta ||= {}
+                        page.meta.middleware = ['auth']
+                    }
+                    if (page.children) {
+                        setMiddleware(page.children)
+                    }
+                }
+            }
+            setMiddleware(pages)
         }
     }
 })

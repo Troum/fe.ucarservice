@@ -4,10 +4,14 @@ import {reactive} from "vue";
 // @ts-ignore
 import {object, string, type InferType} from 'yup'
 import type {FormSubmitEvent} from '#ui/types'
+import {useApiService} from "~/services/useApiService";
+import {useRouter} from "vue-router";
 
 defineProps(['dialog'])
 
 const {tm} = useI18n()
+const {signIn} = useApiService()
+const router = useRouter()
 
 const schema = object({
   email: string()
@@ -26,18 +30,20 @@ const state = reactive({
 })
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  console.log(event.data)
+  await signIn(event.data).then(() => {
+    router.push({path: '/cabinet'})
+  })
 }
 </script>
 
 <template>
 
-  <UForm :schema="schema" :state="state" class="space-y-4" @submit="onSubmit">
+  <UForm :schema="schema" :state="state" class="space-y-4 xl:w-[30%] 2xl:w-[25%]" @submit="onSubmit">
     <UCard>
       <template #header>
         <div class="flex items-center justify-between">
           <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
-            Вход в систему
+            {{ $t('forms.login.title') }}
           </h3>
           <UButton color="gray"
                    variant="ghost"
@@ -50,7 +56,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <div class="flex flex-col gap-y-4 items-center justify-center">
           <UFormGroup class="w-full mb-4" name="email">
             <template #label>
-              <label class="inline-block mb-4" for="email">{{ $t('forms.registration.fields.email.label') }}</label>
+              <label class="inline-block mb-4" for="email">{{ $t('forms.login.fields.email.label') }}</label>
             </template>
             <template #default>
               <UInput id="email" type="email" size="xl" :placeholder="$t('forms.login.fields.email.placeholder')"
@@ -63,18 +69,25 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
               <label class="inline-block mb-4" for="password">{{ $t('forms.login.fields.password.label') }}</label>
             </template>
             <template #default>
-              <UInput id="password" :placeholder="$t('forms.registration.fields.login.placeholder')" size="xl"
+              <UInput id="password" :placeholder="$t('forms.login.fields.password.placeholder')" size="xl"
                       v-model="state.password" type="password"/>
             </template>
           </UFormGroup>
         </div>
       </div>
       <template #footer>
-        <UButton type="submit"
-                 size="xl"
-                 class="transition-all w-full rounded-full flex justify-center items-center text-[#FFF] bg-[#2F2E34] hover:bg-[rgba(47,46,52,0.75)] dark:bg-[#D65C39] dark:hover:bg-[rgba(214,92,57,0.75)] border border-[#2F2E34] dark:border-[#D65C39]">
-          <span class="text-white">{{ $t('forms.login.submit') }}</span>
-        </UButton>
+        <div class="flex flex-col gap-y-3 justify-center items-center">
+          <UButton type="submit"
+                   size="xl">
+            {{ $t('forms.login.submit') }}
+          </UButton>
+          <div class="flex gap-x-2 justify-start items-center text-[12px]">
+            <span>{{ $t('forms.login.no_account') }}</span>
+            <ULink class="underline underline-offset-2 dark:text-vermilion-200" to="/sign-up">
+              {{ $t('forms.login.no_account_link') }}
+            </ULink>
+          </div>
+        </div>
       </template>
     </UCard>
   </UForm>

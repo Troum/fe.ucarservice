@@ -16,6 +16,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@types/lodash": "^4.17.0",
     "gsap": "^3.12.5",
+    "lodash": "^4.17.21",
     "nuxt": "^3.11.2",
     "pinia-plugin-persist": "^1.0.0",
     "vue": "^3.4.21",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "add": "^2.0.6",
     "sass": "^1.74.1"
   }
