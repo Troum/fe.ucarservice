@@ -7,10 +7,19 @@ body {
 }
 
 @layer components {
-  .lang-switcher-ru {
-    @apply bg-woodsmoke-900 hover:bg-woodsmoke-900 dark:bg-vermilion-200 text-vermilion-200 dark:text-woodsmoke-900
+  .cabinet {
+    @apply w-full grid grid-cols-[12.5%_1fr] grid-rows-[71px_1fr] min-h-[100vh]
   }
-  .lang-switcher-en {
-    @apply bg-woodsmoke-900 hover:bg-woodsmoke-900 dark:bg-vermilion-200 text-vermilion-200 dark:text-woodsmoke-900
+  .aside {
+    @apply border-t border-r border-woodsmoke-900 dark:border-vermilion-200 row-start-2 row-span-1 pr-6
+  }
+  .main {
+    @apply row-start-2 row-span-1 col-start-2 col-span-1
+  }
+  .link {
+    @apply text-woodsmoke-900 dark:text-vermilion-200 relative after:transition-all after:absolute after:bottom-0 after:content-[''] after:block after:w-[0px] after:h-[1px] after:bg-woodsmoke-900 dark:after:bg-vermilion-200 hover:after:w-full
+  }
+  .link-active {
+    @apply text-woodsmoke-900 dark:text-vermilion-200 bg-transparent dark:bg-transparent relative after:absolute after:bottom-0 after:content-[''] after:block after:h-[1px] after:bg-woodsmoke-900 dark:after:bg-vermilion-200 after:w-full
   }
 }

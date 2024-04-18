@@ -49,6 +49,11 @@ export default defineAppConfig({
         checkbox: {
             background: 'bg-transparent dark:bg-transparent',
             border: 'border border-woodsmoke-900 dark:border-vermilion-200'
+        },
+        verticalNavigation: {
+            icon: 'text-woodsmoke-900 dark:text-vermilion-200',
+            inactive: 'text-woodsmoke-900 dark:text-vermilion-200 relative after:transition-all after:absolute after:bottom-0 after:content-[\'\'] after:block after:w-[0px] after:h-[1px] after:bg-woodsmoke-900 dark:after:bg-vermilion-200 hover:after:w-full',
+            active: 'text-woodsmoke-900 dark:text-vermilion-200 bg-transparent dark:bg-transparent relative after:absolute after:bottom-0 after:content-[\'\'] after:block after:h-[1px] after:bg-woodsmoke-900 dark:after:bg-vermilion-200 after:w-full',
         }
     }
 })

@@ -1,15 +1,16 @@
 import {useApiService} from "~/services/useApiService";
+import {useAppStore} from "~/store/useAppStore";
 
 export default defineNuxtRouteMiddleware(async (to, from) => {
-    if (process.server) return;
-
     const { me } = useApiService();
 
-    const {data, error} = await me();
+    const {data: user, error} = await me()
 
-    if (error) {
+    if (error.value) {
         return navigateTo({path: '/sign-in'})
     }
 
-    return navigateTo(to.path)
+    useAppStore().setUser(user.value)
+    
+
 })

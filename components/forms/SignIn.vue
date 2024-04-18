@@ -31,7 +31,7 @@ const state = reactive({
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   await signIn(event.data).then(() => {
-    router.push({path: '/cabinet'})
+    router.push({path: '/cabinet/dashboard'})
   })
 }
 </script>
