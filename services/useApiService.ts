@@ -37,10 +37,19 @@ export function useApiService() {
         return useAppFetch(url, options);
     }
 
+    async function getAllGroups(): Promise<FetchResult<any, any>> {
+        const url = '/auth/groups';
+        const options: UseFetchOptions<any> = {
+            method: 'GET'
+        };
+        return useAppFetch(url, options);
+    }
+
     return {
         signUp,
         signIn,
         signOut,
-        me
+        me,
+        getAllGroups
     };
 }

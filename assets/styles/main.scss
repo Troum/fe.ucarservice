@@ -22,4 +22,7 @@ body {
   .link-active {
     @apply text-woodsmoke-900 dark:text-vermilion-200 bg-transparent dark:bg-transparent relative after:absolute after:bottom-0 after:content-[''] after:block after:h-[1px] after:bg-woodsmoke-900 dark:after:bg-vermilion-200 after:w-full
   }
+  .page {
+    @apply min-h-[calc(100vh-72px)] px-4
+  }
 }

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import {ref} from "vue"
-import {useRoute} from "vue-router";
-const route = useRoute()
 
 const links = [
   {
@@ -25,7 +23,7 @@ const services = ref<any[]>([])
       <UVerticalNavigation :links="links"></UVerticalNavigation>
     </div>
     <div class="main">
-      <NuxtPage />
+      <NuxtPage :page-key="route => route.fullPath"/>
     </div>
   </div>
 </template>

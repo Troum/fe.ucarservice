@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     },
     googleFonts: {
         families: {
-            Montserrat: [400,500,600,700,800,900]
+            Montserrat: [200,300,400,500,600,700,800,900]
         }
     },
     // @ts-ignore

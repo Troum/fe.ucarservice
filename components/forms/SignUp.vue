@@ -54,7 +54,7 @@ const state = reactive({
 const {signUp} = useApiService()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   await signUp(event.data).then(() => {
-    router.push({path: '/cabinet'})
+    router.push({path: '/cabinet/dashboard'})
   })
 }
 </script>
