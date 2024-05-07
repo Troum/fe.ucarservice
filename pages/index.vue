@@ -3,8 +3,6 @@ import {useMode} from "~/composables/useMode";
 
 const mode = useMode()
 
-watch(mode, () => console.log(mode.value))
-
 </script>
 
 <template>

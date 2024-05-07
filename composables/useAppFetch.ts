@@ -23,6 +23,7 @@ export function useAppFetch<T> (url: string, options: UseFetchOptions<T> = {}) {
 
     options.onResponseError = ({response}) => {
         switch (response.status) {
+            case 400:
             case 401:
             case 403:
                 useAlertStore().setAlert({show: true, message: response._data['message'], icon: 'i-heroicons-shield-exclamation', color: 'red'})

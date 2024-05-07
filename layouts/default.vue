@@ -11,8 +11,8 @@ import Alert from "~/components/commons/Alert.vue";
     <Header />
     <slot/>
     <Modal />
-    <Alert />
   </UContainer>
+  <Alert />
 </template>
 
 <style scoped lang="scss">

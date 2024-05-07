@@ -1,11 +1,11 @@
 import {defineStore} from 'pinia'
-import {string} from "yup";
+import type {UserInterface} from "~/interfaces/models/UserInterface";
 
 export const useAppStore = defineStore('useAppStore', {
     state: () => ({
         app: {
             language: "ru",
-            user: {} as {[key: string]: any },
+            user: {} as UserInterface,
             token: null
         },
         modal: {
@@ -31,7 +31,7 @@ export const useAppStore = defineStore('useAppStore', {
         getToken: (state: any): string => {
             return state.app.token
         },
-        getUser: (state: any): {[key: string]: any } => {
+        getUser: (state: any): UserInterface => {
             return state.app.user
         },
         getDialog: (state: any) => {

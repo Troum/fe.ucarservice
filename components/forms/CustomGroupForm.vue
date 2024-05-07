@@ -19,43 +19,25 @@ const mode = useMode()
 const {tm} = useI18n()
 const router = useRouter()
 const schema = object({
-  firstName: string()
-      .required(tm('forms.registration.fields.firstName.rules.required')),
-  lastName: string()
-      .required(tm('forms.registration.fields.lastName.rules.required')),
-  surname: string(),
-  ownership: number()
-      .default(1),
-  company: string()
-      .required(tm('forms.registration.fields.company.rules.required')),
-  agreement: boolean()
-      .required(tm('forms.registration.fields.agreement.rules.required')),
-  email: string()
-      .required(tm('forms.registration.fields.email.rules.required'))
-      .email(tm('forms.registration.fields.email.rules.invalid')),
-  password: string()
-      .min(8, tm('forms.registration.fields.password.rules.min'))
-      .required(tm('forms.registration.fields.password.rules.required'))
+  name: string()
+      .required(tm('forms.customGroup.fields.name.rules.required')),
+  description: string()
+      .required(tm('forms.customGroup.fields.description.rules.required')),
+  icon: string(),
 })
 
 type Schema = InferType<typeof schema>
 
 const state = reactive({
-  firstName: undefined,
-  lastName: undefined,
-  surname: undefined,
-  company: undefined,
-  agreement: undefined,
-  subscription: undefined,
-  ownership: undefined,
-  email: undefined,
-  password: undefined
+  name: undefined,
+  description: undefined,
+  icon: undefined
 })
 const {signUp} = useApiService()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  await signUp(event.data).then(() => {
+  /*await signUp(event.data).then(() => {
     router.push({path: '/cabinet/models'})
-  })
+  })*/
 }
 </script>
 

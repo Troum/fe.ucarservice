@@ -7,6 +7,16 @@
     "menuComponent": []
   },
   "pages": {
+    "cabinet": {
+      "services": {
+        "list": {
+          "heading": {
+            "title": "The groups of services you have added and their services",
+            "description": "You can select any of the services and customize at your discretion: specify the cost of the service, the average norm for the time of service provision, in which of your services this service is available"
+          }
+        }
+      }
+    }
   },
   "forms": {
     "registration": {
@@ -94,6 +104,32 @@
         }
       },
       "submit": "Login"
+    },
+    "group": {
+      "title": "You have not yet added the services you are doing.",
+      "fields": {
+        "groupsIds": {
+          "rules": {
+            "required": "At least one group is mandatory"
+          }
+        }
+      },
+      "submit": "Save"
+    },
+    "customGroup": {
+      "fields": {
+        "name": {
+          "rules": {
+            "required": "Хотя бы одна группа обязательна к выбору"
+          }
+        },
+        "description": {
+          "rules": {
+            "required": "Хотя бы одна группа обязательна к выбору"
+          }
+        }
+      },
+      "submit": "Добавить"
     }
   }
 }
